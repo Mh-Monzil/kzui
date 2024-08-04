@@ -60,9 +60,7 @@ const CustomSelect = ({
     <div
       className={`kzui_main-div ${isDisabled ? "kzui_select-disabled" : ""}`}
     >
-      <div
-        className="kzui_select-input "
-      >
+      <div className="kzui_select-input ">
         {isMulti && value.length > 0 ? (
           // Display selected values for multi-select
           <div className="kzui_multi-values">
@@ -89,14 +87,12 @@ const CustomSelect = ({
           <span className="kzui_placeholder">{placeholder}</span>
         )}
 
-        {/* {isClearable && value && (
-          // Button to clear all selections
-          <span className="kzui_clear-all" onClick={handleClear}>
-            &times;
-          </span>
-        )} */}
-
-        <div onClick={() => !isDisabled && onMenuOpen()} className="kzui_dropdown-arrow">&#x25BC;</div>
+        <div
+          onClick={() => !isDisabled && onMenuOpen()}
+          className="kzui_dropdown-arrow"
+        >
+          &#x25BC;
+        </div>
       </div>
 
       {isOpen && (
