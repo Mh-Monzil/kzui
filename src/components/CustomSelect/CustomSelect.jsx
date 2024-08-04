@@ -19,7 +19,6 @@ const CustomSelect = ({
   const handleChange = (val) => {
     if (isMulti) {
       if (value && value.includes(val)) {
-        // setSelectedValue(selectedValue.filter((v) => v !== value));
         onChangeHandler(value.filter((v) => v !== val));
       } else {
         onChangeHandler([...value, val]);
@@ -107,12 +106,12 @@ const CustomSelect = ({
             />
           )}
 
-          <ul className="kzui_list">
+          <ul  className="kzui_list">
             {isGrouped
               ? filteredOptions.map((group, idx) => (
                   <li key={idx} className="kzui_group">
                     <div className="kzui_group-label">{group.label}</div>
-                    <ul className="kzui_group-list">
+                    <ul onClick={() => !isDisabled && onMenuOpen()} className="kzui_group-list">
                       {group.options.map((option, idx) => (
                         <li
                           key={idx}
